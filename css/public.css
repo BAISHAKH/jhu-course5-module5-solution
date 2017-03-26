@@ -37,8 +37,25 @@
 }
 /* END HOME PAGE */
 
-/* MY INFO PAGE */
-.my-info {
+/* MY INFO */
+.myinfo {
+  margin: 20px;
+  padding: 20px;
+  height: 500px;
+}
+.myinfo button {
+  margin-top: 50px;
+  margin-left: 5px;
+  align-self: center;
+  margin: 10px;
+  font-size: 1.6em;
+
+}
+
+/* END MY INFO */
+
+/* SIGNUP */
+.signup {
   box-shadow: 0 0 50px #3F0C1F;
   border: 2px solid #3F0C1F;
   background-color: #f6b319;
@@ -53,37 +70,37 @@
   padding: : 50px;
 }
 
-.my-info h1  {
+.signup h2  {
   margin-top: 20px;
   text-align: center;
 
 }
 
-.my-info input  {
+.signup input  {
   width: 50%;
   margin-left: 10px;
   margin-bottom: 20px;
 }
-.my-info label  {
+.signup label  {
   width: 50%;
   margin-left: 5px;
 }
 
-.my-info button  {
+.signup button  {
   margin-left: 5px;
   align-self: center;
   margin: 10px;
   font-size: 1.6em;
 }
 
-.my-info span  {
+.signup span  {
   margin-left: 15px;
   font-weight: bold;
   font-style: oblique;
   color: red;
 }
 
-.my-info img  {
+.signup img  {
   position: absolute;
   bottom: 25%;
   right: 5%;
@@ -102,7 +119,7 @@
 }
 
 
-/* END MY INFO PAGE */
+/* END SIGNUP PAGE */
 
 /* MENU CATEGORIES PAGE */
 .category-tile {

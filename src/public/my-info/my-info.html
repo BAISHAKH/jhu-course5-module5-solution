@@ -5,107 +5,28 @@
   It should also ask the user to specify the menu number that's their favorite dish.
   (The menu number is the short_name attribute of each menu item).
 -->
-
-<div class="my-info">   <!-- form )-->
-  <h1>My Information</h1>
-
-    <fieldset>
-      <legend></legend>
-      <form name='regForm' novalidate>
-
-        <div class="form-group">
-          <label for="namefirst">First Name:</label>
-          <input class="form-control" id="namefirst" type="text" name="namefirst" placeholder="First name"
-            ng-model="reg.user.namefirst"
-            required
-            minlength="2"
-            ng-maxlength="20">
-
-            <span
-              ng-if="(regForm.namefirst.$error.minlength || regForm.namefirst.$error.required) && regForm.namefirst.$touched">
-              First must be at least 2 characters long
-            </span>
-            <span ng-if="regForm.namefirst.$error.maxlength && regForm.namefirst.$touched">
-              First name must not be longer than 20 characters
-            </span>
-        </div>
-
-
-        <div class="form-group">
-          <label for="namelast">Last Name:</label>
-          <input class="form-control" id="namelast" type="text" name="namelast" placeholder="Last name"
-            ng-model="reg.user.namelast"
-            required
-            minlength="2"
-            ng-maxlength="20">
-
-            <span
-              ng-if="(regForm.namelast.$error.minlength || regForm.namelast.$error.required) && regForm.namelast.$touched">
-              Last must be at least 2 characters long
-            </span>
-            <span ng-if="regForm.namelast.$error.maxlength && regForm.namelast.$touched">
-              First name must not be longer than 20 characters
-            </span>
-        </div>
-
-        <div class="form-group">
-          <label for="email">email:</label>
-          <input  class="form-control" id="email" type="email" name="email" placeholder="Email"
-            ng-model="reg.user.email"
-            required>
-            <span ng-if="regForm.email.$invalid && regForm.email.$touched">
-              Must be a valid email address: handle@domain format
-            </span>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">email:</label>
-          <input class="form-control" id="phone" type="text" name="phone" placeholder="Phone ###-###-####"
-            ng-model="reg.user.phone"
-            pattern="(\d{3})-(\d{3})-(\d{4})">
-            <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
-              Phone must be in the format ###-###-####.
-            </span>
-        </div>
-
-        <div class="form-group">
-          <label for="favdish">Favorite Dish (short code):</label>
-          <input class="form-control" id="favdish" type="text" name="favdish" placeholder="Favorite Dish"
-            ng-model="reg.user.favdish"
-            required>
-            <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
-              Required field. BAD CUSTOMER! Eat Elswhere :(
-            </span>
-        </div>
-
-        <button class="btn-primary"
-          ng-disabled="regForm.$invalid"
-          ng-click="reg.submit()">Submit</button>
-
-          <!--
-          <div style="margin-top: 10px;">
-            Form valid? {{ regForm.$valid }}
-          </div>
-        -->
-      </form>
-    </fieldset>
-
-    <div id="image">
-      <img src="http://www.davidchuschinabistro.com/images/L1.jpg"
-          class="img-rounded"
-          alt="David Chu China Bistro Menu Item"
-          width="100%">
+<div class="myinfo">
+  <div ng-if="myInfoCtrl.userinfo">
+    <div>
+      First name: {{myInfoCtrl.userinfo.firstName}} <br />
+      Last name: {{myInfoCtrl.userinfo.lastName}} <br />
+      Email address: {{myInfoCtrl.userinfo.email}} <br />
+      Phone number: {{myInfoCtrl.userinfo.phone}} <br />
     </div>
 
-
-<!--    <div id="info" ng-if="reg.completed">  -->
-      <div id="info" ng-if="regForm.$valid">
-      First: {{ reg.user.namefirst}} <br>
-      Last: {{ reg.user.namelast}} <br>
-      Email: {{ reg.user.email}} <br>
-      Phone: {{ reg.user.phone }} <br>
-      Dish: {{ reg.user.favdish}} <br>
-      URL: http://www.davidchuschinabistro.com/images/{{ reg.user.favdish}}.jpg
+    <div>
+      <h2 class="text-center">Favorite</h2>
+        <menu-item
+                   menu-item="myInfoCtrl.menuItem">
+        </menu-item>
     </div>
+  </div>
 
-</div>  <!-- form -->
+  <!-- Everything else in this file regards a visitor who is not signed up -->
+
+  <div ng-if="!myInfoCtrl.userinfo">
+    <h2>Oh Dear, You're not signed up!!!!</h2>
+    <button type="button" ui-sref="public.signup" class="btn btn-primary">Sign up Now!</button>
+  </div>  <!-- ng-if="!myInfoCtrl.userinfo" -->
+
+</div>
