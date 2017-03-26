@@ -4,9 +4,10 @@
 angular.module('public')
 .controller('SignupController', SignupController);
 
-SignupController.$inject = ['MenuService', 'MyInfoService'];
-function SignupController(MenuService, MyInfoService) {
+SignupController.$inject = ['MenuService', 'MyInfoService', 'ApiPath'];
+function SignupController(MenuService, MyInfoService, ApiPath) {
   var $ctrl = this;
+  $ctrl.basePath = ApiPath;
   $ctrl.userinfo = {};
   $ctrl.existsFavdish = false;
   $ctrl.saved = false;
@@ -19,6 +20,7 @@ function SignupController(MenuService, MyInfoService) {
         .then(function(response) {
           $ctrl.existsFavdish = true;
           $ctrl.saved = true;
+          $ctrl.menuItem = response.data;
           MyInfoService.setInfo($ctrl.userinfo);
         })
         .catch(function() {
