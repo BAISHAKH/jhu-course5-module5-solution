@@ -37,6 +37,73 @@
 }
 /* END HOME PAGE */
 
+/* MY INFO PAGE */
+.my-info {
+  box-shadow: 0 0 50px #3F0C1F;
+  border: 2px solid #3F0C1F;
+  background-color: #f6b319;
+
+  float: inherit;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  width: 75%;
+  height: 100%;
+  margin: 50px;
+  padding: : 50px;
+}
+
+.my-info h1  {
+  margin-top: 20px;
+  text-align: center;
+
+}
+
+.my-info input  {
+  width: 50%;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+.my-info label  {
+  width: 50%;
+  margin-left: 5px;
+}
+
+.my-info button  {
+  margin-left: 5px;
+  align-self: center;
+  margin: 10px;
+  font-size: 1.6em;
+}
+
+.my-info span  {
+  margin-left: 15px;
+  font-weight: bold;
+  font-style: oblique;
+  color: red;
+}
+
+.my-info img  {
+  position: absolute;
+  bottom: 25%;
+  right: 5%;
+  width: 40%;
+  box-shadow: 0 1px 5px 1px #000;
+
+}
+
+
+.ng-touched.ng-valid {
+  border: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border: 5px red solid;
+}
+
+
+/* END MY INFO PAGE */
+
 /* MENU CATEGORIES PAGE */
 .category-tile {
   position: relative;
