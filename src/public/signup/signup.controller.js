@@ -4,8 +4,8 @@
     angular.module('public')
     .controller('SignupController', SignupController);
 
-    SignupController.$inject = ['UserInfoService', 'MenuService'];
-    function SignupController(UserInfoService, MenuService) {
+    SignupController.$inject = ['MyInfoService', 'MenuService'];
+    function SignupController(MyInfoService, MenuService) {
         var ctrl = this;
         ctrl.userInfo = {};
         ctrl.saved = false;
@@ -17,7 +17,7 @@
 
         ctrl.setUserinfo = function() {
             console.log('SignupController.setUserinfo()');
-            UserInfoService.setUserinfo(ctrl.userInfo);
+            MyInfoService.setUserinfo(ctrl.userInfo);
 
             ctrl.saved = true;
             ctrl.message = 'Your information has been saved!';

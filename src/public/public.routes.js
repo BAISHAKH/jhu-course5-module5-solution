@@ -49,12 +49,12 @@ function routeConfig ($stateProvider) {
     })
     .state('public.userInfo', {
       url: '/userInfo',
-      templateUrl: 'src/public/user-info/user-info.html',
+      templateUrl: 'src/public/my-info/my-info.html',
       controller: 'UserInfoController',
-      controllerAs: 'userInfoCtrl',
+      controllerAs: 'myInfoCtrl',
       resolve: {
-        userInfo: ['UserInfoService', function(UserInfoService) {
-          return UserInfoService.getUserinfo();
+        userInfo: ['MyInfoService', function(MyInfoService) {
+          return MyInfoService.getUserinfo();
         }]
       }
     });
