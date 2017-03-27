@@ -149,6 +149,7 @@
 .signup-right {
   float: left;
   width: 50%;
+  color: white;
 }
 .signup {
   box-shadow: 0 0 50px #3F0C1F;
@@ -159,26 +160,51 @@
   position: relative;
   overflow: hidden;
   text-align: left;
-  width: 75%;
+  width: 90%;
   height: 100%;
   margin: 50px;
   padding: : 50px;
 }
 
+.signup-innerwhitebox {
+  box-shadow: 0 0 10px #3F0C1F;
+  border: 2px solid #3F0C1F;
+  background-color: #61122F;
+  border-radius: 3px;
+  overflow: hidden;
+
+  width: 90%;
+  height: 500px;
+  margin: 5%;
+  padding: : 50px;
+
+}
+
+.signup-savemessage {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.signup-searchresults {
+  margin-left: 10%;
+}
+
 .signup h2  {
   margin-top: 20px;
   text-align: center;
+  border-bottom: : 2px solid white;
 
 }
 
 .signup input  {
-  width: 50%;
+  width: 95%;
   margin-left: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .signup label  {
   width: 50%;
   margin-left: 5px;
+  margin-top: 5px;
 }
 
 .signup button  {
@@ -212,19 +238,6 @@
   border: 5px red solid;
 }
 
-.signup-searchresults {
-  box-shadow: 0 0 50px #3F0C1F;
-  border: 2px solid #3F0C1F;
-  background-color: green;
-  border-radius: 3px;
-  overflow: hidden;
-
-  width: 80%;
-  margin-top: 3%;
-  margin-left: 10%;
-  padding: : 50px;
-
-}
 
 
 /* END SIGNUP PAGE */

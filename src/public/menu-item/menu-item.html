@@ -1,15 +1,16 @@
 
 <div class="menu-item-component-left">
-  <div class="menu-item-photo">
-    <div class="menu-item-short-name">{{$ctrl.menuItem.short_name}}</div>
-    <img class="img-responsive img-rounded" width="250" height="150" ng-src="{{$ctrl.basePath}}/images/{{$ctrl.menuItem.short_name}}.jpg" alt="{{$ctrl.menuItem.name}}">
+  <div class="">
+    <div class="">{{$ctrl.menuItem.short_name}}</div>
+    <img class="" width="250" height="150" ng-src="{{$ctrl.basePath}}/images/{{$ctrl.menuItem.short_name}}.jpg" alt="{{$ctrl.menuItem.name}}">
   </div>
 </div>
 
 
 <div class="menu-item-component-right">
-  <div class="menu-item-description">
-    <h4 class="menu-item-title">{{$ctrl.menuItem.name}}</h4>
-    <p class="menu-item-details">{{$ctrl.menuItem.description}}</p>
+  <div class="">
+    <h4 class="">{{$ctrl.menuItem.name}}</h4>
+    <p>URL: {{$ctrl.basePath}}/images/{{$ctrl.menuItem.short_name}}.jpg</p>
+    <p class="">{{$ctrl.menuItem.description}}</p>
   </div>
 </div>
