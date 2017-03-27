@@ -38,31 +38,35 @@
 /* END HOME PAGE */
 
 /* MY menu-item class addition for the menu-item component */
-.menu-item-component-left {
-  width: 25%;
+.menu-item-component {
+  margin: 5px;
   float: left;
 }
+
+.menu-item-component-left {
+  width: 28%;
+  float: left;
+  margin: 2%;
+}
 .menu-item-component-right {
-  width: 68%;
-  height: 135px;
+  width: 60%;
+  height: 200px;
   float:left;
   background-color: #557B3E;
   border-radius: 5px;
-  margin-left: 5%;
+  margin: 2%;
+  font-size: .75em;
 }
 
-.menu-item-component-right h4 p {
-  margin-left: 5px;
+.menu-item-component img {
+  width: 100%;
+  height: 100%;
+  float: left;
+  object-fit: cover;
+  overflow: hidden;
 }
 
-.menu-item-component-price {
-  font-size: 1.1em;
-  text-align: right;
-  margin-top: -15px;
-  margin-right: -15px;
-  color: green;
 
-}
 
 
 /* END: MY menu-item class addition for the menu-item component */
@@ -105,10 +109,13 @@
   float:none;
 }
 
-.myinfo dl dt {
-/*  background:#5f9be3;  */
+.myinfo dd {
   color:green;
+}
+
+.myinfo dl dt {
   float:left;
+  color:green;
   font-weight:bold;
   margin-right:10px;
   padding:5px;
@@ -176,8 +183,6 @@
   width: 90%;
   height: 500px;
   margin: 5%;
-  padding: : 50px;
-
 }
 
 .signup-savemessage {
@@ -186,7 +191,7 @@
 }
 
 .signup-searchresults {
-  margin-left: 10%;
+
 }
 
 .signup h2  {
@@ -219,15 +224,6 @@
   font-weight: bold;
   font-style: oblique;
   color: red;
-}
-
-.signup img  {
-  position: absolute;
-  bottom: 25%;
-  right: 5%;
-  width: 40%;
-  box-shadow: 0 1px 5px 1px #000;
-
 }
 
 .ng-touched.ng-valid {
