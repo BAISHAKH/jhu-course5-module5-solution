@@ -15,9 +15,9 @@
 
         console.log('SignupController instantiated');
 
-        ctrl.setUserinfo = function() {
-            console.log('SignupController.setUserinfo()');
-            MyInfoService.setUserinfo(ctrl.userInfo);
+        ctrl.setMyinfo = function() {
+            console.log('SignupController.setMyinfo()');
+            MyInfoService.setMyinfo(ctrl.userInfo);
 
             ctrl.saved = true;
             ctrl.message = 'Your information has been saved!';

@@ -7,15 +7,15 @@
     MyInfoService.$inject = [];
     function MyInfoService() {
         var service = this;
-        service.userInfo = {};
+        service.myInfo = {};
 
-        service.setUserinfo = function(userInfo) {
-            service.userInfo = userInfo;
-            console.log('MyInfoService.registerUser() - userInfo:', service.userInfo);
+        service.setMyinfo = function(myInfo) {
+            service.myInfo = myInfo;
+            console.log('MyInfoService.registerUser() - myInfo:', service.myInfo);
         };
 
-        service.getUserinfo = function () {
-            return service.userInfo;
+        service.getMyinfo = function () {
+            return service.myInfo;
         };
     }
 })();

@@ -54,7 +54,7 @@ function routeConfig ($stateProvider) {
       controllerAs: 'myInfoCtrl',
       resolve: {
         userInfo: ['MyInfoService', function(MyInfoService) {
-          return MyInfoService.getUserinfo();
+          return MyInfoService.getMyinfo();
         }]
       }
     });
