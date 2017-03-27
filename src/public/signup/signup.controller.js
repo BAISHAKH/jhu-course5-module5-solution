@@ -1,51 +1,50 @@
 (function () {
-"use strict";
+    "use strict";
 
-angular.module('public')
-.controller('SignupController', SignupController);
+    angular.module('public')
+    .controller('SignupController', SignupController);
 
-SignupController.$inject = ['MenuService', 'MyInfoService', 'ApiPath'];
-function SignupController(MenuService, MyInfoService, ApiPath) {
-  var $ctrl = this;
-  $ctrl.basePath = ApiPath;
-  $ctrl.userinfo = {};
-  $ctrl.existsFavdish = false;
-  $ctrl.saved = false;
+    SignupController.$inject = ['UserService', 'MenuService'];
+    function SignupController(UserService, MenuService) {
+        var ctrl = this;
+        ctrl.userInfo = {};
+        ctrl.saved = false;
+        ctrl.message = '';
+        ctrl.validShortCode = false;
+        ctrl.itemSearched = false;
 
-  $ctrl.submit = function() {
+        console.log('SignupController instantiated');
 
-    console.log("we're in submit()");
+        ctrl.setUserinfo = function() {
+            console.log('SignupController.setUserinfo()');
+            UserService.setUserinfo(ctrl.userInfo);
 
-      MenuService.getMenuItem($ctrl.userinfo.favdish)
-        .then(function(response) {
-          $ctrl.existsFavdish = true;
-          $ctrl.saved = true;
-          $ctrl.menuItem = response.data;
-          MyInfoService.setInfo($ctrl.userinfo);
-        })
-        .catch(function() {
-          console.log("User info: ", $ctrl.userinfo);
-          $ctrl.existsFavdish = false;
-        });
+            ctrl.saved = true;
+            ctrl.message = 'Your information has been saved!';
+        };
+
+        ctrl.validateFavdish = function() {
+            ctrl.validShortCode = false;
+            ctrl.itemSearched = false;
+            console.log('in SignupController.validateFavdish():', ctrl.userInfo);
+
+            if(typeof ctrl.userInfo.favoriteDish === 'undefined') return;
+            if(ctrl.userInfo.favoriteDish.trim().length <= 0) return;
+
+            MenuService.getMenuItem(ctrl.userInfo.favoriteDish).then(
+                function(response) {
+                    console.log('SignupController.validateFavdish() - Success:', response.data);
+                    ctrl.userInfo.dishInfo = response.data;
+                    ctrl.validShortCode = true;
+                    ctrl.itemSearched = true;
+                },
+                function(response) {
+                    console.log('SignupController.validateFavdish() - Failed:', response.data);
+                    ctrl.itemSearched = true;
+                }
+            );
+        };
 
 
     }
-
-    $ctrl.validateFavdish = function() {
-
-      console.log("we're in validateFavdish()");
-
-      MenuService.getMenuItem($ctrl.userinfo.favdish)
-        .then(function () {
-          $ctrl.existsFavdish = true;
-        })
-        .catch(function() {
-          console.log("User info: ", $ctrl.userinfo);
-          $ctrl.existsFavdish = false;
-        });
-    }
-
-  };
-
-
 })();

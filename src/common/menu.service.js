@@ -27,17 +27,10 @@ function MenuService($http, ApiPath) {
     });
   };
 
-  // added by mcdaniel
-  service.getMenuItem = function (shortName) {
-      var url = ApiPath + "/menu_items/" + shortName + ".json";
-      return $http.get(url).then(
-        function (response) {
-          return response.data;
-        }
-      );
-    }
+  service.getMenuItem = function(shortName) {
+    return $http.get(ApiPath + '/menu_items/' + shortName + '.json');
+  };
+
 }
-
-
 
 })();
