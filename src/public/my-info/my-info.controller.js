@@ -2,15 +2,15 @@
     'use strict';
 
     angular.module('public')
-    .controller('UserInfoController', UserInfoController);
+    .controller('MyInfoController', MyInfoController);
 
-    UserInfoController.$inject = ['userInfo'];
-    function UserInfoController(userInfo) {
+    MyInfoController.$inject = ['userInfo'];
+    function MyInfoController(userInfo) {
         var ctrl = this;
         ctrl.userInfo = userInfo;
         ctrl.saved = !angular.equals(userInfo, {});
 
-        console.log('instantiated UserInfoController:', userInfo);
+        console.log('instantiated MyInfoController:', userInfo);
 
     }
 })();

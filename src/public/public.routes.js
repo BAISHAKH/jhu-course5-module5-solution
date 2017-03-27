@@ -47,10 +47,10 @@ function routeConfig ($stateProvider) {
       controller: 'SignupController',
       controllerAs: 'signupCtrl'
     })
-    .state('public.userInfo', {
-      url: '/userInfo',
+    .state('public.myinfo', {
+      url: '/myinfo',
       templateUrl: 'src/public/my-info/my-info.html',
-      controller: 'UserInfoController',
+      controller: 'MyInfoController',
       controllerAs: 'myInfoCtrl',
       resolve: {
         userInfo: ['MyInfoService', function(MyInfoService) {
