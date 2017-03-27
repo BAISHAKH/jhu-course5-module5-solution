@@ -2,16 +2,16 @@
     "use strict";
 
     angular.module('common')
-    .service('UserService', UserService);
+    .service('UserInfoService', UserInfoService);
 
-    UserService.$inject = [];
-    function UserService() {
+    UserInfoService.$inject = [];
+    function UserInfoService() {
         var service = this;
         service.userInfo = {};
 
         service.setUserinfo = function(userInfo) {
             service.userInfo = userInfo;
-            console.log('UserService.registerUser() - userInfo:', service.userInfo);
+            console.log('UserInfoService.registerUser() - userInfo:', service.userInfo);
         };
 
         service.getUserinfo = function () {
