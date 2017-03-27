@@ -37,30 +37,118 @@
 }
 /* END HOME PAGE */
 
+/* MY menu-item class addition for the menu-item component */
+.menu-item-component-left {
+  width: 25%;
+  float: left;
+}
+.menu-item-component-right {
+  width: 68%;
+  height: 135px;
+  float:left;
+  background-color: #557B3E;
+  border-radius: 5px;
+  margin-left: 5%;
+}
+
+.menu-item-component-right h4 p {
+  margin-left: 5px;
+}
+
+.menu-item-component-price {
+  font-size: 1.1em;
+  text-align: right;
+  margin-top: -15px;
+  margin-right: -15px;
+  color: green;
+
+}
+
+
+/* END: MY menu-item class addition for the menu-item component */
+
 /* MY INFO */
 .myinfo {
-  margin: 20px;
-  padding: 20px;
-  height: 500px;
+  box-shadow: 0 0 50px #3F0C1F;
+  border: 2px solid #3F0C1F;
+  background-color: #dfdfdf;
+  border-radius: 3px;
+  overflow: hidden;
+
+  width: 80%;
+  margin-top: 3%;
+  margin-left: 10%;
+  padding: : 50px;
 }
+.myinfo-alert {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 50px;
+}
+
+.myinfo-alert h2 {
+  margin-bottom: 50px;
+}
+
+.myinfo-me {
+  width: 95%;
+  float:none;
+  margin-left: 2.5%;
+  border-bottom: 3px solid green;
+}
+
+.myinfo-dish {
+  width: 100%auto;
+  margin-top: 25px;
+  margin-left: 2.5%;
+
+  float:none;
+}
+
+.myinfo dl dt {
+/*  background:#5f9be3;  */
+  color:green;
+  float:left;
+  font-weight:bold;
+  margin-right:10px;
+  padding:5px;
+
+}
+.myinfo dt {
+  text-align: right;
+  width: 15%;
+}
+
+.myinfo dd {
+  text-align: left;
+  width: 75%;
+}
+
+.myinfo dl dd {
+  margin:2px 0;
+  padding:5px 0;
+}
+
 .myinfo button {
   margin-top: 50px;
   margin-left: 5px;
   align-self: center;
   margin: 10px;
-  font-size: 1.6em;
+  font-size: 2em;
 
 }
 
 /* END MY INFO */
 
 /* SIGNUP */
-#search-results {
-  position: absolute;
-  top: 20%;
-  right: 2%;
-  width: 35%;
-  height: 50%
+.signup-left {
+  float: left;
+  width: 50%;
+}
+
+.signup-right {
+  float: left;
+  width: 50%;
 }
 .signup {
   box-shadow: 0 0 50px #3F0C1F;
@@ -116,19 +204,6 @@
 
 }
 
-.signup panel  {
-  position: absolute;
-  bottom: 25%;
-  right: 5%;
-  width: 40%;
-  box-shadow: 0 1px 5px 1px #000;
-}
-
-.signup dl, dt, dd {
-  color: green;
-}
-
-
 .ng-touched.ng-valid {
   border: 2px green solid;
 }
@@ -137,17 +212,23 @@
   border: 5px red solid;
 }
 
+.signup-searchresults {
+  box-shadow: 0 0 50px #3F0C1F;
+  border: 2px solid #3F0C1F;
+  background-color: green;
+  border-radius: 3px;
+  overflow: hidden;
+
+  width: 80%;
+  margin-top: 3%;
+  margin-left: 10%;
+  padding: : 50px;
+
+}
+
 
 /* END SIGNUP PAGE */
 
-/* START userinfo */
-.userinfo {
-  width: 50%;
-  height: 80%;
-  margin-top: 25px;
-  
-}
-/* END userinfo */
 
 /* MENU CATEGORIES PAGE */
 .category-tile {
@@ -198,6 +279,7 @@
 .menu-item-photo {
   position: relative;
   border: 2px solid #3F0C1F;
+  border-radius: 3px;
   overflow: hidden;
   padding: 0;
   margin-right: -15px;

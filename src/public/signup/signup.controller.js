@@ -34,7 +34,7 @@
             MenuService.getMenuItem(ctrl.userInfo.favoriteDish).then(
                 function(response) {
                     console.log('SignupController.validateFavdish() - Success:', response.data);
-                    ctrl.userInfo.dishInfo = response.data;
+                    ctrl.userInfo.MenuItem = response.data;
                     ctrl.validShortCode = true;
                     ctrl.itemSearched = true;
                 },
